@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  gpu-temp:
+    build: .
+    container_name: gpu-temp-api
+    ports:
+      - "5000:5000"
+    volumes:
+      - /sys/class/drm:/sys/class/drm:ro
+    restart: unless-stopped
